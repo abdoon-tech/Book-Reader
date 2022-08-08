@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5em;
+    font-family: Verdana, Arial, san-serif;
+    font-size: 11px;
+    color: #ffffff;
+    background: #4b4743
+}
+
+.reader {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    background-color: rgb(255, 245, 245);
+    height: 90%;
+    width: 50%;
+    border-radius: 5px;
+    color: black;
+    overflow-y: scroll;
+}
+
+.row {
+    position: absolute;
+    left: 72%;
+}
+
+.row .search {
+    background-color: #1c1c1c;
+    width: 350px;
+    min-height: 116px;
+    border: none;
+    border-radius: 2px;
+}
+
+.row .search .card-header {
+    background-color: #563c19;
+    width: 100%;
+    text-align: center;
+    height: 25px;
+    font-size: 25px;
+    color: #969547;
+}
+
+.row .search input {
+    width: 200px;
+    height: 28px;
+    margin-left: 50px;
+    border: none;
+    border-radius: 3px;
+}
+
+.row .search .search-button {
+    border: none;
+    border: 1px solid #9c8326;
+    border-radius: 3px;
+    background-color: #9c8326;
+    height: 30px;
+    cursor: pointer;
+}
+
+.row .search .search-button :hover {
+    background-color: #796932;
+}
+
+.row .most-used-words {
+    background-color: #1c1c1c;
+    width: 350px;
+    margin-top: 20px;
+    min-height: 116px;
+    border: none;
+    border-radius: 2px;
+}
+
+.row .most-used-words .card-header {
+    color: #969547;
+    background-color: #563c19;
+    width: 100%;
+    text-align: center;
+    height: 25px;
+    font-size: 25px;
+}
+
+.row .most-used-words .card-header {
+    margin-bottom: 10px;
+}
+
+.row .least-used-words {
+    background-color: #1c1c1c;
+    width: 350px;
+    min-height: 116px;
+    border: none;
+    border-radius: 2px;
+}
+
+.row .least-used-words .card-header {
+    color: #969547;
+    background-color: #563c19;
+    width: 100%;
+    text-align: center;
+    height: 25px;
+    font-size: 25px;
+}
+
+.row .least-used-words .card-header {
+    margin-bottom: 10px;
+}
+
+.row .DocumentStats {
+    background-color: #1c1c1c;
+    width: 350px;
+    min-height: 116px;
+    border: none;
+    border-radius: 2px;
+}
+
+.row .DocumentStats .card-header {
+    color: #969547;
+    background-color: #563c19;
+    width: 100%;
+    text-align: center;
+    height: 25px;
+    font-size: 25px;
+}

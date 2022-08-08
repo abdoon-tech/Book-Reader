@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Book reader</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="menu">
+            <ul>
+                <li><a href="/" class="current">Home</a></li>
+                <li><a href="/subpage">Search</a></li>
+                <li><a href="/subpage">Books</a></li>
+                <li><a href="/subpage">New Releases</a></li>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <!-- end of menu -->
+
+        <div id="header">
+            <div id="special_offers">
+                
+            </div>
+
+
+            <div id="new_books">
+                
+            </div>
+        </div>
+        <!-- end of header -->
+
+        <div id="content">
+
+            <div id="content_left">
+                <div class="content_left_section">
+                    <h1>Categories</h1>
+                    <ul>
+                        <li><a href="/subpage">Donec accumsan urna</a></li>
+                        <li><a href="/subpage">Proin vulputate justo</a></li>
+                        <li><a href="#">In sed risus ac feli</a></li>
+                        <li><a href="#">Aliquam tristique dolor</a></li>
+                        <li><a href="#">Maece nas metus</a></li>
+                        <li><a href="#">Sed pellentesque placerat</a></li>
+                        <li><a href="#">Suspen disse</a></li>
+                        <li><a href="#">Maece nas metus</a></li>
+                        <li><a href="#">In sed risus ac feli</a></li>
+                    </ul>
+                </div>
+                <div class="content_left_section">
+                    <h1>Bestsellers</h1>
+                    <ul>
+                        <li><a href="#">Vestibulum ullamcorper</a></li>
+                        <li><a href="#">Maece nas metus</a></li>
+                        <li><a href="#">In sed risus ac feli</a></li>
+                        <li><a href="#">Praesent mattis varius</a></li>
+                        <li><a href="#">Maece nas metus</a></li>
+                        <li><a href="#">In sed risus ac feli</a></li>
+                        <li><a href="#">Flash Templates</a></li>
+                        <li><a href="#">CSS Templates</a></li>
+                        <li><a href="#">Web Design</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end of content left -->
+
+            <div id="content_right">
+                <div class="product_box">
+                    <h1>DRACULA <span id="author">by Bram Stoker</span></h1>
+                    <img src="images/image_01.jpg" alt="image" />
+                    <div class="product_info">
+                        <p>Etiam luctus. Quisque facilisis suscipit elit. Curabitur...</p>
+                        <div class="read_now_button" onclick="details(event)"><a href="/subpage">Detail</a></div>
+                    </div>
+                    <div class="cleaner">&nbsp;</div>
+                </div>
+
+                <div class="cleaner_with_width">&nbsp;</div>
+
+                <div class="product_box">
+                    <h1>Cooking <span>by New Author</span></h1>
+                    <img src="images/image_02.jpg" alt="image" />
+                    <div class="product_info">
+                        <p>Aliquam a dui, ac magna quis est eleifend dictum.</p>
+                        <div class="read_now_button" onclick="details(event)"><a href="/subpage">Detail</a></div>
+                    </div>
+                    <div class="cleaner">&nbsp;</div>
+                </div>
+
+                <div class="cleaner_with_height">&nbsp;</div>
+
+                <div class="product_box">
+                    <h1>Gardening <span>by Famous Author</span></h1>
+                    <img src="images/image_03.jpg" alt="image" />
+                    <div class="product_info">
+                        <p>Ut fringilla enim sed turpis. Sed justo dolor, convallis at.</p>
+                        <div class="read_now_button" onclick="details(event)"><a href="/subpage">Detail</a></div>
+                    </div>
+                    <div class="cleaner">&nbsp;</div>
+                </div>
+
+                <div class="cleaner_with_width">&nbsp;</div>
+
+                <div class="product_box">
+                    <h1>Sushi Book <span>by Japanese Name</span></h1>
+                    <img src="images/image_04.jpg" alt="image" />
+                    <div class="product_info">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <div class="read_now_button" onclick="details(event)"><a href="/subpage">Detail</a></div>
+                    </div>
+                    <div class="cleaner">&nbsp;</div>
+                </div>
+
+                <div class="cleaner_with_height">&nbsp;</div>
+
+              
+            </div>
+            <!-- end of content right -->
+
+            <div class="cleaner_with_height">&nbsp;</div>
+        </div>
+        <!-- end of content -->
+
+        <div id="footer">
+
+            <a href="/subpage">Home</a> | <a href="/subpage">Search</a> | <a href="/subpage">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br /> Copyright © 2024
+        </div>
+        <!-- end of footer -->
+    </div>
+    <!-- end of container -->
+</body>
+
+<script>
+
+      function details(event){
+        var bookname=event.path[3].children[0].childNodes[0].textContent
+        var authorName=event.path[3].children[0].lastChild.innerText
+        $.post('/subpage',{
+            bookName:bookname,
+            author:authorName
+        }).done(function(res){
+            window.location.href="subpage"
+        })
+
+
+      }
+        
+
+
+     
+
+</script>
+
+</html>

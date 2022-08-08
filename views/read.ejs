@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="stylesheet" href="/css/read.css" type="text/css">
+</head>
+
+<body>
+    <div class="reader">
+        <%=readMe%>
+    </div>
+
+
+    <div class="row">
+        <div class="search">
+            <h3 class="card-header">Search</h3>
+            <input id="search"></input>
+            <button class="search-button" onclick="searchbutton();">search</button>
+        </div>
+        <div class="most-used-words">
+            <h3 class="card-header">Most Used Words</h3>
+            <div class="document">
+                <%topWords.forEach(function(Info) {%>
+                <ul id="mostUsedwordsList">
+                    <li><%=Info[0] + " : " + Info[1]%> time(s)</li>
+                </ul>
+                <%})%>
+            </div>
+        </div>
+        <div class="least-used-words">
+            <h3 class="card-header">Least Used Words</h3>
+            <div class="document">
+                <%leastWords.forEach(function(Info) {%>
+                <ul id="leastusedwordsList">
+                    <li><%=Info[0] + " : " + Info[1]%></li>
+                </ul>
+            <%})%>
+            </div>
+        </div>
+        <div class="DocumentStats">
+            <h3 class="card-header">Doc Stats</h3>
+            <ul class="list">
+                <li id="DocLength"><%=docLength%></li>
+                <li id="WordCount"><%=wordCount%></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var search = document.getElementById("search");
+        var reader = document.querySelector(".reader")
+
+        function searchbutton() 
+        {
+            if (search.value.trim() == "") {
+                alert("Enter a Keyword");
+            } else {
+                var searchedText = search.value;
+                // reglar expression to not care about lowerCase or upperCase
+                const regex = new RegExp(searchedText, 'gi');
+                let text = reader.innerHTML;
+                text = text.replace(/(<mark class="highlight">|<\/mark>)/gim, '');
+
+                //add Highlight to the text
+                const newText = text.replace(regex, '<mark class="highlight">$&</mark>');
+                reader.innerHTML = newText;
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+</html>
+
+</html>
