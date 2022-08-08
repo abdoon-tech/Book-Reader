@@ -17,7 +17,7 @@ and it has a search functionality that finds the word that you type
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[Next.js]: https://img.shields.io/badge/-HTML-red
+[Html]: https://img.shields.io/badge/-HTML-red
 [css]: https://img.shields.io/badge/-Css-blue
 [nodejs-url]: https://img.shields.io/badge/-Node%20Js-blue
 [nodejs.org]: https://nodejs.org/en/
