@@ -8,8 +8,8 @@ and it has a search functionality that finds the word that you type
 
 ### Built With
 
-* [![Html][Html]
-* [![css][css]
+* [Html][Html]
+* [css][css]
 * [![Node Js][nodejs.org]][nodejs-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
