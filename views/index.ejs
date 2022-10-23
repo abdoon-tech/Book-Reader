@@ -6,6 +6,7 @@
     <title>Book reader</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
@@ -73,7 +74,7 @@
             <div id="content_right">
                 <div class="product_box">
                     <h1>DRACULA <span id="author">by Bram Stoker</span></h1>
-                    <img src="images/image_01.jpg" alt="image" />
+                    <img src="images/Dracula.jpg" alt="image" />
                     <div class="product_info">
                         <p>Etiam luctus. Quisque facilisis suscipit elit. Curabitur...</p>
                         <div class="read_now_button" onclick="details(event)"><a href="/subpage">Detail</a></div>
@@ -84,8 +85,8 @@
                 <div class="cleaner_with_width">&nbsp;</div>
 
                 <div class="product_box">
-                    <h1>Cooking <span>by New Author</span></h1>
-                    <img src="images/image_02.jpg" alt="image" />
+                    <h1>The Philosopher Stone <span>by J.K Rowling</span></h1>
+                    <img src="images/The Philosophers Stone.jpg" alt="image" />
                     <div class="product_info">
                         <p>Aliquam a dui, ac magna quis est eleifend dictum.</p>
                         <div class="read_now_button" onclick="details(event)"><a href="/subpage">Detail</a></div>
@@ -96,8 +97,8 @@
                 <div class="cleaner_with_height">&nbsp;</div>
 
                 <div class="product_box">
-                    <h1>Gardening <span>by Famous Author</span></h1>
-                    <img src="images/image_03.jpg" alt="image" />
+                    <h1>The Chamber of Secrets <span>by J.K Rowling</span></h1>
+                    <img src="images/The Chamber of Secrets.jpg" alt="image" />
                     <div class="product_info">
                         <p>Ut fringilla enim sed turpis. Sed justo dolor, convallis at.</p>
                         <div class="read_now_button" onclick="details(event)"><a href="/subpage">Detail</a></div>
@@ -108,8 +109,8 @@
                 <div class="cleaner_with_width">&nbsp;</div>
 
                 <div class="product_box">
-                    <h1>Sushi Book <span>by Japanese Name</span></h1>
-                    <img src="images/image_04.jpg" alt="image" />
+                    <h1>The Prisoner of Azkaban <span>by J.K Rowling</span></h1>
+                    <img src="images/The Prisoner of Azkaban.jpg" alt="image" />
                     <div class="product_info">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         <div class="read_now_button" onclick="details(event)"><a href="/subpage">Detail</a></div>
@@ -141,9 +142,11 @@
       function details(event){
         var bookname=event.path[3].children[0].childNodes[0].textContent
         var authorName=event.path[3].children[0].lastChild.innerText
+        var imageSource=event.path[3].children[1].attributes[0].value
         $.post('/subpage',{
             bookName:bookname,
-            author:authorName
+            author:authorName,
+            imageSource:imageSource
         }).done(function(res){
             window.location.href="subpage"
         })
