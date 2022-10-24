@@ -12,3 +12,13 @@ and it has a search functionality that finds the word that you type
 * Css
 * Node Js
 * Jquery
+
+
+
+# Install All Required Dependencies
+
+npm install
+
+# Start The Server
+
+npm start
