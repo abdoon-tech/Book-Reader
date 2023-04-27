@@ -113,13 +113,14 @@
     var buybutton=document.querySelector(".read_now_button")
     buybutton.addEventListener("click",function(event){
         event.preventDefault()
-        let bookName=event.path[2].firstChild.nextSibling.innerText;
-
+        let bookName= event.target.parentNode.parentNode.children[0].innerText;
+        
         $.post('/read',{
             bookName:bookName
         }).done(function(res){
             window.location.href="read"
         })
+       
     })
 
 

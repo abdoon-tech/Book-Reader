@@ -18,7 +18,6 @@ const readRoute = require("./routers/read")
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }))
-
 app.use("/", indexRoute)
 app.use(subpageRoute)
 app.use(readRoute)

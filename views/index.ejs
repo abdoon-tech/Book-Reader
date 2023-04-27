@@ -77,7 +77,7 @@
                     <img src="images/Dracula.jpg" alt="image" />
                     <div class="product_info">
                         <p>Etiam luctus. Quisque facilisis suscipit elit. Curabitur...</p>
-                        <div class="read_now_button" onclick="details(event)"><a href="/subpage">Detail</a></div>
+                        <div class="read_now_button" onclick="details(event)"><a href="#">Detail</a></div>
                     </div>
                     <div class="cleaner">&nbsp;</div>
                 </div>
@@ -139,10 +139,11 @@
 
 <script>
 
-      function details(event){
-        var bookname=event.path[3].children[0].childNodes[0].textContent
-        var authorName=event.path[3].children[0].lastChild.innerText
-        var imageSource=event.path[3].children[1].attributes[0].value
+    function details(event){
+        var product_box=event.target.parentNode.parentNode.parentElement
+        var authorName=product_box.firstChild.nextElementSibling.children[0].textContent
+        var imageSource=product_box.children[1].attributes[0].value
+        var bookname=product_box.children[0].firstChild.textContent
         $.post('/subpage',{
             bookName:bookname,
             author:authorName,
@@ -151,8 +152,8 @@
             window.location.href="subpage"
         })
 
-
-      }
+       
+    }
         
 
 
